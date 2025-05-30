@@ -8,7 +8,7 @@ import 'package:gasless_gossip/features/auth/screens/forgot_password_screen.dart
 import 'package:gasless_gossip/features/auth/screens/password_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/verify_email_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/email_verification_screen.dart';
-import 'package:gasless_gossip/features/auth/screens/success_screen.dart';
+// import 'package:gasless_gossip/features/auth/screens/success_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/register_success_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/enter_password_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/reset_password_screen.dart';
@@ -21,6 +21,7 @@ import 'package:gasless_gossip/features/home/screens/fund_strk_wallet_screen.dar
 import 'package:gasless_gossip/features/home/screens/fund_other_chains_screen.dart';
 import 'package:gasless_gossip/features/home/screens/all_nfts_screen.dart';
 import 'package:gasless_gossip/features/home/screens/chat_detail_screen.dart';
+import 'package:gasless_gossip/features/home/screens/send_strk_from_chat_screen.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
@@ -63,10 +64,10 @@ final GoRouter _router = GoRouter(
       path: '/email-verification',
       builder: (context, state) => const EmailVerificationScreen(),
     ),
-    GoRoute(
-      path: '/success',
-      builder: (context, state) => const SuccessScreen(),
-    ),
+    // GoRoute(
+    //   path: '/success',
+    //   builder: (context, state) => const SuccessScreen(),
+    // ),
     GoRoute(
       path: '/register-success',
       builder: (context, state) => const RegisterSuccessScreen(),
@@ -130,6 +131,13 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/chat-detail',
       builder: (context, state) => const ChatDetailScreen(),
+    ),
+    GoRoute(
+      path: '/send-strk-from-chat',
+      builder: (context, state) => SendStrkFromChatScreen(
+        recipientName: state.uri.queryParameters['recipientName'] ?? 'Unknown',
+        recipientAddress: state.uri.queryParameters['recipientAddress'],
+      ),
     ),
   ],
 );
