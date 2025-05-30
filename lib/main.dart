@@ -8,7 +8,7 @@ import 'package:gasless_gossip/features/auth/screens/forgot_password_screen.dart
 import 'package:gasless_gossip/features/auth/screens/password_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/verify_email_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/email_verification_screen.dart';
-import 'package:gasless_gossip/features/auth/screens/success_screen.dart';
+// import 'package:gasless_gossip/features/auth/screens/success_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/register_success_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/enter_password_screen.dart';
 import 'package:gasless_gossip/features/auth/screens/reset_password_screen.dart';
@@ -63,10 +63,10 @@ final GoRouter _router = GoRouter(
       path: '/email-verification',
       builder: (context, state) => const EmailVerificationScreen(),
     ),
-    GoRoute(
-      path: '/success',
-      builder: (context, state) => const SuccessScreen(),
-    ),
+    // GoRoute(
+    //   path: '/success',
+    //   builder: (context, state) => const SuccessScreen(),
+    // ),
     GoRoute(
       path: '/register-success',
       builder: (context, state) => const RegisterSuccessScreen(),
